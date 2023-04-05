@@ -20,7 +20,7 @@
       // Slide settings
       settings: {
                 title: 'Reproducible Research',
-                        subtitle: 'How to make your research reproducible',
+                        subtitle: 'Introduction to AI assistants',
                 useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -3143,398 +3143,119 @@ padding: 0.5em 1.5em;
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">3/29/2023</p>
+            <p style="margin-top: 6px; margin-left: -2px;">4/5/2023</p>
           </hgroup>
   </slide>
 
-<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Introduction </h2><h3> (press <em>p</em> to show the hidden notes)</h3></hgroup><article  id="introduction-press-p-to-show-the-hidden-notes">
+<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>ChatGPT (and similar tools)</h2></hgroup><article  id="chatgpt-and-similar-tools">
 
-<aside class='note'><section>Not here - when browsing the rest of the presentation ;)</section></aside>
-
-<p><font color="white"><em>&ldquo;In every project you have at least one other collaborator: future-you. You don’t want future-you to curse past-you&rdquo;</em> - <a href='https://www.r-bloggers.com/2016/05/your-most-valuable-collaborator-future-you/' title=''>Hadley Wickham</a></font></p>
-
-</article></slide><slide class=""><hgroup><h2>General idea</h2></hgroup><article  id="general-idea">
-
-<div style="float: left; width: 55%;">
-<p>What is the goal of making our work reproducible?</p>
+</article></slide><slide class=""><hgroup><h2>Why is it important? AI assistants can:</h2></hgroup><article  id="why-is-it-important-ai-assistants-can">
 
 <ul>
-<li>Returning to your own code after six months.</li>
-</ul></div>
-
-<div style="float: right; width: 40%;">
-<p><a href="https://xkcd.com/844/"> <img src="https://imgs.xkcd.com/comics/good_code.png" height = 450></img></a><br/><font size=3>source: xkcd (<a href='https://xkcd.com/844/' title=''>https://xkcd.com/844/</a>)</font></p></div>
-
-<aside class='note'><section><p>This is probably and actually the main (i.e. the most likely to come up) reason to care about your code.</p>
-
-Imagine having worked on ten different things in the meantime, and then having to do something again with your code. If in academia, this can be because of journal <em>revisions</em> or comments after conferences. In business, perhaps it’s a project type that comes up only once in a while. Or perhaps you’re supposed to teach this to new team members.</section></aside>
-
-</article></slide><slide class=""><hgroup><h2>General idea</h2></hgroup><article  id="general-idea-1">
-
-<div style="float: left; width: 55%;">
-<p>What is the goal of making our work reproducible?</p>
-
-<ul>
-<li>Returning to your own code after six months.</li>
-<li>If you switch jobs, someone might need to take over your projects.</li>
-</ul></div>
-
-<div style="float: right; width: 40%;">
-<p><a href="https://xkcd.com/844/"> <img src="https://imgs.xkcd.com/comics/good_code.png" height = 450></img></a><br/><font size=3>source: xkcd (<a href='https://xkcd.com/844/' title=''>https://xkcd.com/844/</a>)</font></p></div>
-
-<p><font size=4><em>&ldquo;Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.&rdquo;</em><br/>- quote by… <a href='https://stackoverflow.com/questions/876089/who-wrote-this-programing-saying-always-code-as-if-the-guy-who-ends-up-maintai' title=''>someone(?)</a></font></p>
-
-<aside class='note'><section><p>The employer should actually care about this, but not always does. Sometimes there’s not enough time provided to create proper documentation and a clean, well thought out code. Other than trying to get the necessary time or writing everything perfectly on the first try, not much can be done then.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>General idea</h2></hgroup><article  id="general-idea-2">
-
-<div style="float: left; width: 55%;">
-<p>What is the goal of making our work reproducible?</p>
-
-<ul>
-<li>Returning to your own code after six months.</li>
-<li>If you switch jobs, someone might need to take over your projects.</li>
-<li>Your team-members.</li>
-<li>Other researchers verifying or looking to replicate your research.</li>
-<li>Collaborators who do not know you (e.g. in open-source).</li>
-</ul></div>
-
-<div style="float: right; width: 40%;">
-<p><a href="https://xkcd.com/844/"> <img src="https://imgs.xkcd.com/comics/good_code.png" height = 450></img></a><br/><font size=3>source: xkcd (<a href='https://xkcd.com/844/' title=''>https://xkcd.com/844/</a>)</font></p></div>
-
-<aside class='note'><section><p>In any case, the code and documentation should be enough to allow people to understand what is going on, why, how to contribute if possible and how to use your code.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Big question: who’s going to read it?</h2></hgroup><article  id="big-question-whos-going-to-read-it">
-
-<p>Documentation can serve different purposes.</p>
-
-<ul>
-<li><p>is it mostly about instructions for use?</p></li>
-<li><p>or is it mostly about replication and verification?</p></li>
-<li><p>perhaps it’s about further development and contributing?</p></li>
+<li><p>write / translate code</p></li>
+<li><p>document code</p></li>
+<li><p>explain code</p></li>
+<li><p>suggest improvements</p></li>
+<li><p>suggest tests</p></li>
+<li><p>act as tutors</p></li>
+<li><p>provide a giant productivity boost</p></li>
 </ul>
 
-<aside class='note'><section><p>Depending on what you write and where you write it (private firm? academia? open-source for hobbyistic reasons?) you might want to stylise your documentation and comments accordingly.</p>
-
-<p>It’s good to have comments that explain the reasoning behind the code in any case, but documentation might be oriented towards users or collaborators or other researchers, etc.</p>
-
-<p>Sometimes documentation is not necessary because an article might document the whole process. Not all of the issues raised in further slides apply to all contexts.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>In short</h2></hgroup><article  id="in-short">
+</article></slide><slide class=""><hgroup><h2>Key ones for these classes:</h2></hgroup><article  id="key-ones-for-these-classes">
 
 <ul>
-<li>create code that is easy to read, use, understand and modify.</li>
-<li>create documentation so it’s clear what you did, why you did it, what the outcome is supposed to be and what to do to use it.</li>
-<li>the <em>why</em> is crucial at most stages, but you should also highlight what your project does in the first place.</li>
+<li><p>General-purpose chats (ChatGPT)</p></li>
+<li><p>GitHub Copilot (<a href='https://docs.github.com/en/copilot/quickstart' title=''>free for students</a>)</p></li>
+<li><p>GitHub Copilot X (assistance throughout the whole process)</p></li>
 </ul>
 
-<blockquote>
-
-If people don’t know why your project exists, they won’t use it.<br/>If people can’t figure out how to install your code, they won’t use it.<br/>If people can’t figure out how to use your code, they won’t use it.
-
-</blockquote>
-
-<div style="float: right; width: 30%;">
-<p><font size=5>(<a href='https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/' title=''>Quote from here</a>)</font></p></div>
-
-<aside class='note'><section><p>Ok, that’s quite a few things. So what to focus on?</p>
-
-<p>It kind of depends on your goal. If you created something and want other people to use it, you might want to start documentation with a short description of what your project does and why it’s good to use it (instead of potential other ones).</p>
-
-<p>If it’s there so people can verify/replicate your work, they probably already know what it’s supposed to do and why. They might be more interested in how and why (for verification) or usage (for replication).</p></section></aside>
-
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Data</h2></hgroup><article  id="data">
-
-</article></slide><slide class=""><hgroup><h2>Variables</h2></hgroup><article  id="variables">
+</article></slide><slide class=""><hgroup><h2>What to know about ChatGPT</h2></hgroup><article  id="what-to-know-about-chatgpt">
 
 <ul>
-<li><p>use consistent naming.</p></li>
-<li><p>follow an existing convention if possible.</p></li>
-<li><p>names short but self-explanatory if possible. E.g.:</p>
-
-<ul>
-<li><em>fine</em>: variable <code>sector</code> taking values of &ldquo;<em>public</em>&rdquo; or &ldquo;<em>private</em>&rdquo;</li>
-<li>(often) <em>better</em>: variable <code>private_sector</code> taking values of 0 and 1 (&ldquo;no&rdquo; and &ldquo;yes&rdquo;)</li>
-</ul></li>
-<li><p>use prefixes or suffixes but - again - consistently. E.g.:</p>
-
-<ul>
-<li><code>wave1_wage</code>, <code>wave1_occupation</code>, <code>wave2_wage</code>, <code>wave2_occupation</code></li>
-</ul></li>
-<li><p>if software allows it - add labeling.</p></li>
+<li><p>It’s not conscious and doesn’t have own ideas or sense of self (&ldquo;interviews&rdquo; are pointless)</p></li>
+<li><p>It tries to satisfy and predict what is asked for</p></li>
+<li><p>It doesn’t have feelings (but can fake them)</p></li>
+<li><p>Doesn’t have its own opinion (but has some restrictions)</p></li>
+<li><p>Doesn’t have internet access (Bing does though)</p></li>
 </ul>
 
-<aside class='note'><section><p>Refer to popular libraries, packages, articles, survey data, etc. (depends on the context) and check the existing names. Stick to a convention to make it easier for everyone.</p>
+</article></slide><slide class=""><hgroup><h2><a href='https://ryxcommar.com/2023/03/28/chatgpt-as-a-query-engine-on-a-giant-corpus-of-text/' title=''>„ChatGPT is like a query engine on a giant corpus of text”</a></h2></hgroup><article  id="chatgpt-is-like-a-query-engine-on-a-giant-corpus-of-text">
 
-<p>Names shouldn’t be too long, but it’s nice if they indicate well what a variable does. Avoid abbreviations that only you understand and only at the time of writing.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Values</h2></hgroup><article  id="values">
+<p>Some implications:</p>
 
 <ul>
-<li><p>code the values consistently. E.g. always 0/1 or always 1/2 (not a mix).</p></li>
-<li><p>if software allows it - add labeling.</p></li>
-<li><p>ensure proper formatting (e.g. numeric vs string).</p></li>
+<li><p>Under-responding to input variance</p></li>
+<li><p>Over-responding to input variance</p></li>
+<li><p>Failed extrapolation beyond the training set</p></li>
+<li><p>Depth of the training set in over-represented domains</p></li>
+<li><p>&ldquo;Social mirroring&rdquo;</p></li>
 </ul>
 
-<p>When designing data collection try using established wording and definitions for questions (e.g. on education, occupation, labour market status, etc.).</p>
+</article></slide><slide class=""><hgroup><h2>All this considered, it’s a formidable tool</h2></hgroup><article  id="all-this-considered-its-a-formidable-tool">
 
 <ul>
-<li>follow conventions (e.g. existing classifications, question sets).</li>
+<li><p><a href='https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/' title=''>GitHub Copilot decreased the time for a programming task from 2h 41m to 1h 11m</a></p></li>
+<li><p><a href='https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1.pdf' title=''>ChatGPT decreased time and increased quality for writing tasks - mainly among lower-skilled writers</a></p></li>
+<li><p><a href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4397280' title=''>AI assistance increased telemarketers’ creativity and deal closing</a></p></li>
 </ul>
 
-<aside class='note'><section><p>Again, sticking to conventions helps. In this case it also allows to make comparisons between your data and other datasets (which is sometimes impossible if different wording and answer options were used).</p></section></aside>
+</article></slide><slide class=""><hgroup><h2>We’re only at the start</h2></hgroup><article  id="were-only-at-the-start">
 
-</article></slide><slide class=""><hgroup><h2>Data, files, encoding</h2></hgroup><article  id="data-files-encoding">
+<p>Not to sound ominous, but future solutions will be more context-tailored.</p>
 
-<ul>
-<li><p>come up with a structure for your files - don’t just put them all in the same folder. Various approaches possible (e.g. <a href='https://eglerean.github.io/reproducible-research/02-organizing-projects/' title=''>this one</a>, but consistency is key.</p></li>
-<li><p>you can store raw files - these don’t have to be as neat and might contain something you needed during the development stage (e.g. some exploration, statistics, graphs, etc.). Focus on the final ones.</p></li>
-<li><p>avoid language-specific characters in names, labels, paths, etc. Use UTF-8 to minimise problems.</p></li>
-<li><p>use file formats that can be accessed by other software, e.g. CSV.</p></li>
-<li><p>try to avoid doing things by hand - try to automatise as much as possible.</p></li>
-</ul>
+<p>And probably not general-use text chats - think plugins, chatbots, or voice-controlled assistants (<a href='https://twitter.com/mckaywrigley/status/1642948620604538880' title=''>here’s a proof-of-concept glimpse</a>)</p>
 
-<aside class='note'><section><p>If you want your process to be reproducible, you should avoid manual input. That’s a part of the process that you cannot control when others do it. If unavoidable, include instructions.</p></section></aside>
+</article></slide><slide class=""><hgroup><h2>It’s a different technological change</h2></hgroup><article  id="its-a-different-technological-change">
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Code</h2></hgroup><article  id="code">
+<p>Prior technologies affected mostly routine, manual, repeatable work.</p>
 
-<p><a href="https://xkcd.com/1513/"> <img src="https://imgs.xkcd.com/comics/code_quality.png"></img></a><br/><font size=3>source: xkcd (<a href='https://xkcd.com/1513/' title=''>https://xkcd.com/1513/</a>). Also check parts <a href='https://xkcd.com/1695/' title=''>2</a> and <a href='https://xkcd.com/1833/' title=''>3</a>.</font></p>
+<p>Current advances affect better-paid &lsquo;high-skilled&rsquo; work, including coding, writing, creativity, etc.</p>
 
-<aside class='note'><section><p>Note: some of these &lsquo;rules&rsquo; are academic research-specific, while others are more consistent with building some open source software, still others are more useful for when working with a team in a firm.</p>
+<p>It shouldn’t be ignored.</p>
 
-<p>You should be able to judge which of those seem useful for your case.</p></section></aside>
+</article></slide><slide class=""><hgroup><h2>AI and ethics</h2></hgroup><article  id="ai-and-ethics">
 
-</article></slide><slide class=""><hgroup><h2>Variables, values, packages</h2></hgroup><article  id="variables-values-packages">
-
-<ul>
-<li><p>define your variables (if possible) at the start.</p></li>
-<li><p>set seeds in the code.</p></li>
-<li><p>load additional stuff (libraries/packages) at the beginning.</p>
-
-<ul>
-<li>if using a custom-built package, make sure to include it.</li>
-</ul></li>
-<li><p>use consistent syntax (e.g. stick to <code>&lt;-</code> instead of <code>=</code>)</p></li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Use indentation</h2></hgroup><article  id="use-indentation">
-
-<ul>
-<li><p>indentation is a good way of marking subsections of your code.</p>
-
-<ul>
-<li>common uses: function’s body, after conditions, in loops, etc.</li>
-</ul></li>
-<li><p>you can add other cases if it makes the code more readable, but be consistent.</p></li>
-<li><p>some languages will partially force you with this (e.g. Python, YAML).</p></li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Use functions</h2></hgroup><article  id="use-functions">
-
-<ul>
-<li><p>if you repeat a set of operations at least several times (some say 3), turn it into a function instead.</p></li>
-<li><p>note: functions should have one purpose each. (see: <a href='https://en.wikipedia.org/wiki/Single-responsibility_principle' title=''>Single responsibility principle</a>)</p></li>
-<li><p>define your functions at the start or even in a separate file/package (that gets referred to).</p></li>
-<li><p>the fewer arguments the better.</p></li>
-</ul>
-
-<aside class='note'><section><p>Set default values for arguments to make functions easier to use. If a value can be calculated based on other values (that are always provided), do not include it as an argument, but calculate it within the function.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Use loops (or vectors) to avoid repetitions</h2></hgroup><article  id="use-loops-or-vectors-to-avoid-repetitions">
-
-<ul>
-<li><p>don’t write multiple lines that do mostly the same and only switch one thing.</p></li>
-<li><p>create loops to avoid repetition (over values, over elements in the list, etc.)</p></li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Paths and working directories</h2></hgroup><article  id="paths-and-working-directories">
-
-<ul>
-<li><p>define your working directory at the very start.</p></li>
-<li><p>if using more than one directory, define the paths and refer to them later on.</p></li>
-<li><p>this will allow others to just customise this according to their needs at the start.</p></li>
-<li><p>you can also create flexible &lsquo;relative&rsquo; paths (e.g. relative to the file with the code).</p></li>
-</ul>
-
-<aside class='note'><section><p>You can have some defaults (e.g. you can have a customisable general path or path that defaults to a specific folder). And you can then have defaults that refer to subfolder (e.g. &ldquo;outputs&rdquo;, &ldquo;figures&rdquo;, &ldquo;processed data&rdquo;). But other people using your work might already have some convention for such folders - it’d be best to allow them to easily adjust the code accordingly.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Handling errors</h2></hgroup><article  id="handling-errors">
-
-<ul>
-<li><p>if meant for use by others, try making your code fool-proof.</p></li>
-<li><p>provide helpful error (or warning) notifications that help identify what went wrong.</p></li>
-</ul>
-
-<p>See <code>try</code> and <code>try catch</code> in R or Java (or <code>try</code> and <code>except</code> in Python) for ways to handle errors.</p>
-
-<aside class='note'><section><p>This might also be helpful for your own troubleshooting, when using the code.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Add comments</h2></hgroup><article  id="add-comments">
-
-<ul>
-<li>use comments a lot, but not too much.<br/></li>
-<li>place them above or to the side (when referring to a specific line).</li>
-</ul>
-
-<p>Comments should:</p>
-
-<ul>
-<li>provide brief info on &lsquo;what&rsquo; <strong>if not clear</strong>.</li>
-<li>provide additional info on &lsquo;why&rsquo; <strong>if not clear</strong>.</li>
-<li>explain how it’s done <strong>if not clear</strong>.</li>
-</ul>
-
-<p>Pick one formatting style for your comments and be consistent.</p>
-
-<aside class='note'><section><p>As with many things, it might be worth it to show your code to another person and check whether they can understand - more or less - what is happening in the code using your comments for guidance.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Avoid hardcoding</h2></hgroup><article  id="avoid-hardcoding">
-
-<ul>
-<li><p>avoid using constants.</p></li>
-<li><p>if possible, calculate them on the go (e.g. find the number of rows, find the maximum, find the length of a list, calculate the distance, etc.).</p></li>
-<li><p>if not, define them at the start (allowing others to easily change those for the whole code if necessary).</p></li>
-<li><p>in scraping, try to define general pathways, without referring to, e.g., numbers of elements (as those might change).</p></li>
-</ul>
-
-<aside class='note'><section><p>The goal is to make your code flexible. In the future it might be used for different datasets, or modified to consider different variables, methods, etc. This shouldn’t prevent the code from executing properly.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Clean your code and track changes</h2></hgroup><article  id="clean-your-code-and-track-changes">
-
-<ul>
-<li><p>get rid of redundant stuff like variables/functions you don’t use.</p></li>
-<li><p>if you update your code, check if other pieces remain relevant.</p></li>
-<li><p>don’t forget to update your comments along with the code(!).</p></li>
-<li><p>use version control and meaningful commits.</p></li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Need some code examples of why this matters?</h2></hgroup><article  id="need-some-code-examples-of-why-this-matters">
-
-<p>Check these posts containing code samples:</p>
-
-<p><a href='https://blog.alexdevero.com/6-simple-tips-writing-clean-code/' title=''>6 simple tips on how to start writing clean code - Alex Devero</a></p>
-
-<p><a href='https://www.pluralsight.com/blog/software-development/10-ways-to-write-cleaner-code' title=''>10 ways to write cleaner code - Pluralsight</a></p>
-
-<p><a href='https://www.butterfly.com.au/blog/website-development/clean-high-quality-code-a-guide-on-how-to-become-a-better-programmer' title=''>Clean, high quality code: a guide on how to become a better programme - Arash Arabi (Butterfly)</a></p>
-
-<p><a href='https://www.geeksforgeeks.org/7-tips-to-write-clean-and-better-code-in-2020/' title=''>7 Tips To Write Clean And Better Code in 2020 - anuupadhyay (GeeksforGeeks)</a></p>
-
-<aside class='note'><section><p>These mostly reiterate the same stuff but contain some bad code vs good code comparisons.</p></section></aside>
-
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Writing</h2></hgroup><article  id="writing">
-
-</article></slide><slide class=""><hgroup><h2>A research article</h2></hgroup><article  id="a-research-article">
-
-<ul>
-<li><p>make sure you explain what you did in a way that others can follow.</p></li>
-<li><p>try reading it and deciding whether you’d be able to replay the process based on your text.</p></li>
-<li><p>if possible, take a break and return to the document after some time. Does it still seem clear?</p></li>
-<li><p>you can also ask someone to read your text and check whether the process is understandable.</p></li>
-</ul>
-
-<aside class='note'><section><p>The reader should be able to understand and picture the whole process (even without looking into the code), or at least be provided with relevant references if they want more information.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Versions and sources</h2></hgroup><article  id="versions-and-sources">
-
-<ul>
-<li><p>include a note on your software, system and library/packages versions.</p></li>
-<li><p>if using a non-standard package, make sure to note where to acquire it (as well as when was it acquired by you).</p></li>
-<li><p>if data was obtained from an external source, make sure to name it and specify when you accessed it.</p></li>
-<li><p>combine documentation with versioning (e.g. README.md on GitHub) so it becomes a living document.</p></li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>License</h2></hgroup><article  id="license">
-
-<ul>
-<li><p>provide a software license (best if you pick an existing one).</p></li>
-<li><p>things to consider:</p>
-
-<ul>
-<li>do you want others to name you</li>
-<li>do you want others to make profit using your work</li>
-<li>do you want others to make their work open source</li>
-</ul></li>
-<li><p>Most popular licenses: Apache, BSD, GPL, MIT.</p></li>
-</ul>
-
-<p>For a short summary see <a href='https://exygy.com/blog/which-license-should-i-use-mit-vs-apache-vs-gpl/' title=''>here</a> or <a href='https://opensource.stackexchange.com/questions/217/what-are-the-essential-differences-between-the-bsd-and-mit-licences' title=''>here</a>.</p>
-
-<p>For a more comprehensive list of choices <a href='https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licences' title=''>check Wikipedia</a>.</p>
-
-<aside class='note'><section><p>Legal stuff might be important and crucial for who ends up using your code. Think carefully. Insisting on sharing the results with the same license might have its merits but it will also turn away firms who do not want to risk it.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Sections to consider in the documentation:</h2></hgroup><article  id="sections-to-consider-in-the-documentation">
-
-<ul>
-<li>brief and clear: what and why.</li>
-<li>installation and usage instructions.
-
-<ul>
-<li>usage example might be helpful</li>
-</ul></li>
-<li>describe functions, their properties and usage.</li>
-<li>where to report issues.</li>
-<li>how to contribute (e.g. do pull requests), and who contributed.</li>
-<li>FAQ.</li>
-<li>where to ask for support.</li>
-</ul>
-
-<p>Also of interest: <a href='https://tom.preston-werner.com/2010/08/23/readme-driven-development.html' title=''><em>&ldquo;Readme-driven development&rdquo;</em></a>.</p>
-
-<aside class='note'><section><p>Depending on your needs, you might want to pay special attention to how you start if you want your code to get out there and be used.</p>
-
-<p>Here, again, the target audience and the type of your work are crucial.</p></section></aside>
-
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Helpful tools</h2></hgroup><article  id="helpful-tools">
-
-</article></slide><slide class=""><hgroup><h2>Automated code cleaning and styling</h2></hgroup><article  id="automated-code-cleaning-and-styling">
-
-<p>When pressed for time and need to clean your code (or want to make it consistent in a team), e.g.:</p>
-
-<p>R: <a href='https://github.com/r-lib/styler' title=''>styleR</a>, <a href='https://github.com/yihui/formatR' title=''>formatR</a>, <a href='https://bookdown.org/yihui/rmarkdown-cookbook/opts-tidy.html' title=''>&lsquo;tidy = true&rsquo; option in RMarkdown</a></p>
-
-<p>Python: <a href='https://black.readthedocs.io/en/stable/' title=''>Black</a></p>
-
-<p>Java: <a href='https://prettier.io/' title=''>prettier</a></p>
-
-<p>Or online (in-browser) syntax cleaners.</p>
-
-<aside class='note'><section><p>There are pre-defined styles for code out there. You might check them out and use them, but the most important things are actually: clarity and consistency.</p></section></aside>
-
-</article></slide><slide class=""><hgroup><h2>Controlling the environment</h2></hgroup><article  id="controlling-the-environment">
-
-<p>To ensure consistency, save the versions of your software and packages or have a package do it for you. More in one of the next classes.</p>
-
-</article></slide><slide class=""><hgroup><h2>Use AI for help</h2></hgroup><article  id="use-ai-for-help">
-
-<p>Current AI models are already great at:</p>
-
-<ul>
-<li>explaining codes</li>
-<li>cleaning and optimising codes</li>
-<li>adding comments</li>
-<li>translating codes to other languages, etc.</li>
-<li>writing documentation</li>
-</ul>
-
-<p>Use them for quick productivity gains! But: you’re responsible for the output. Always double-check. More on that in one of the next classes.</p>
-
-</article></slide><slide class=""><hgroup><h2>ASSIGNMENT</h2></hgroup><article  id="assignment">
+<p>There are a lot of ethical issues and dangers to consider. Be aware:</p>
 
 <ol>
-<li>Take a look at the attached code document. It could use some cleaning.</li>
+<li><p>you are responsible for how you use the AI’s output - it’s not 100% accurate</p></li>
+<li><p>don’t pretend AI’s output is purely your own work</p></li>
+<li><p>take lecturer’s intentions into consideration - don’t cheat</p></li>
 </ol>
 
-<p>Note: you can pick the .R or .ipynb version. Both work, but the latter is an automated translation.</p>
+<p>In these classes, please follow our AI policy - if used for final project, please state the scope of the support, the AI model and version, the prompts used.</p>
 
-<ol>
-<li><p>You might try using one of the mentioned R packages or another tool to do some initial cleaning first.</p></li>
-<li><p>Make the code clearer by using a loop or through working with vectors.</p></li>
-<li><p>Make the code clearer by using a function.</p></li>
-<li><p>Replace hardcoded parameters and values with something smarter.</p></li>
-<li><p>Commit (provide a short message on your changes) -&gt; Push to your repositories</p></li>
-</ol></article></slide>
+</article></slide><slide class=""><hgroup><h2>Let’s go through some cases 1</h2></hgroup><article  id="lets-go-through-some-cases-1">
+
+<p>Here: <a href='newer%20models%20are%20paid' title=''>https://chat.openai.com/chat</a></p>
+
+<p>Let’s play around with this weird piece of code:</p>
+
+<p>void f(char <em>x, char</em>y, int z) { int z2 = (z + 7) / 8; switch (z % 8) { case 0: do { <em>x++ = </em>y++; case 7: <em>x++ = </em>y++; case 6: <em>x++ = </em>y++; case 5: <em>x++ = </em>y++; case 4: <em>x++ = </em>y++; case 3: <em>x++ = </em>y++; case 2: <em>x++ = </em>y++; case 1: <em>x++ = </em>y++; } while (–z2 &gt; 0); } }</p>
+
+<p>Remember: ChatGPT isn’t even tailored for coding!</p>
+
+</article></slide><slide class=""><hgroup><h2>Let’s go through some cases 2</h2></hgroup><article  id="lets-go-through-some-cases-2">
+
+<p>Let’s create a tutor, who’ll question us about <code>git</code></p>
+
+</article></slide><slide class=""><hgroup><h2>Let’s go through some cases 3</h2></hgroup><article  id="lets-go-through-some-cases-3">
+
+<p>Let’s learn more about Docker, potential workflows, integrations with Git and other software/languages.</p>
+
+</article></slide><slide class=""><hgroup><h2>Assignment 1</h2></hgroup><article  id="assignment-1">
+
+<p>Let’s try the code assignments again. Try some reformatting, simplification, etc. with the assistance of ChatGPT.</p>
+
+<p>Hint 1: not sure how to improve the code? Ask ChatGPT if it sees some way.</p>
+
+<p>Hint 2: the code now throws an error? feed the error back to ChatGPT, ask it for correction.</p>
+
+<p>Hint 3: ChatGPT outputs improve if it has <a href='https://arxiv.org/abs/2303.17651' title=''>a feedback loop (improves upon itself)</a></p>
+
+</article></slide><slide class=""><hgroup><h2>Assignment 2</h2></hgroup><article  id="assignment-2">
+
+<p>Pick a topic you’ve been struggling with (during these classes or some other). Ask ChatGPT to walk you through it OR try to turn it into a tutor who gives short lectures and then questions you about it before continuing.</p></article></slide>
 
 
   <slide class="backdrop"></slide>
