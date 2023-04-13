@@ -1,0 +1,9 @@
+kd_golis@google-cloud-linux-kg:~$ uname -a
+Linux google-cloud-linux-kg 5.15.0-1030-gcp #37-Ubuntu SMP Tue Feb 14 19:37:08 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+kd_golis@google-cloud-linux-kg:~$ cd
+kd_golis@google-cloud-linux-kg:~$ pwd
+/home/kd_golis
+kd_golis@google-cloud-linux-kg:~$ touch test.txt
+kd_golis@google-cloud-linux-kg:~$ ls -l
+total 0
+-rw-rw-r-- 1 kd_golis kd_golis 0 Apr 13 16:52 test.txt
