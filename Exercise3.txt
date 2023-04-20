@@ -1,0 +1,17 @@
+kd_golis@google-cloud-linux-kg:~$ ps aux | grep cpu
+root          10  0.0  0.0      0     0 ?        I<   16:42   0:00 [mm_percpu_wq]
+root          18  0.0  0.0      0     0 ?        S    16:42   0:00 [cpuhp/0]
+root          19  0.0  0.0      0     0 ?        S    16:42   0:00 [cpuhp/1]
+kd_golis    1422  0.0  0.2   7004  2164 pts/0    R+   17:12   0:00 grep --color=auto cpu
+kd_golis@google-cloud-linux-kg:~$ ip a | tail -n 3
+       valid_lft 84360sec preferred_lft 84360sec
+    inet6 fe80::4001:aff:feb6:2/64 scope link 
+       valid_lft forever preferred_lft forever
+kd_golis@google-cloud-linux-kg:/etc$ cd /etc/nvme
+kd_golis@google-cloud-linux-kg:/etc/nvme$ pwd
+/etc/nvme
+kd_golis@google-cloud-linux-kg:/etc/nvme$ cat discovery.conf | head -n 3
+# Used for extracting default parameters for discovery
+#
+# Example:
+kd_golis@google-cloud-linux-kg:/etc/nvme$ 
