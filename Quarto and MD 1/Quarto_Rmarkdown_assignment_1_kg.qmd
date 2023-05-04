@@ -36,3 +36,18 @@ t(describe(data_suits$viewers_millions))
 ```
 
 
+
+## Ad. 4
+
+```{r}
+library(ggplot2)
+data_suits %>%
+  ggplot(aes(x=air_date, y=viewers_millions)) +
+  geom_line() +
+  ggtitle('Viewership over time (millions) by date')
+
+data_suits %>%
+  ggplot(aes(x=no_overall, y=viewers_millions)) +
+  geom_line() +
+  ggtitle('Viewership over time (millions) by episode number')
+```
