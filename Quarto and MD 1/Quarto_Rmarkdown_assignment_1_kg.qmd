@@ -1,7 +1,7 @@
 ---
 title: "TV show report - Reproducible Research assignment"
-author: "Wojciech Hardy"
-date: "4/11/2023"
+author: "Kamil Golis"
+date: "2023-05-04"
 format: html
 execute:
   echo: fenced
@@ -18,3 +18,21 @@ The series was renewed for an eighth season on January 30, 2018. In January 2019
 ## Ad. 2
 
 ![](Suits_Logo.png)
+
+
+
+## Ad. 3
+
+```{r}
+library(readxl)
+library(psych)
+library(dplyr)
+setwd('C:\\RR_kg\\repositories\\RRcourse2023\\Quarto and MD 1')
+
+data_suits <- read_xlsx('data_suits.xlsx') %>%
+  mutate(viewers_millions = as.numeric(viewers_millions))
+
+t(describe(data_suits$viewers_millions))
+```
+
+
