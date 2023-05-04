@@ -51,3 +51,16 @@ data_suits %>%
   geom_line() +
   ggtitle('Viewership over time (millions) by episode number')
 ```
+
+
+
+## Ad. 5
+
+```{r}
+data_suits$viewers_delta <- c(0, diff(data_suits$viewers_millions))
+
+data_suits[-1,] %>%
+  ggplot(aes(x=no_overall, y=viewers_delta)) +
+  geom_line() +
+  ggtitle('Viewership delta - episode-to-episode')
+```
