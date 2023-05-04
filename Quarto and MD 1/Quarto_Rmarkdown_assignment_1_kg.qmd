@@ -2,10 +2,13 @@
 title: "TV show report - Reproducible Research assignment"
 author: "Kamil Golis"
 date: "2023-05-04"
-format: html
-execute:
-  echo: fenced
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show the code"
 ---
+
+<br>
 
 ## Ad. 1
 
@@ -13,20 +16,18 @@ execute:
 
 The series was renewed for an eighth season on January 30, 2018. In January 2019, the series was renewed for a ninth and final season which premiered on July 17, 2019. During the course of the series, 134 episodes of *Suits* aired over nine seasons, between June 23, 2011, and September 25, 2019.
 
-
+<br>
 
 ## Ad. 2
 
 ![](Suits_Logo.png)
 
-
+<br>
 
 ## Ad. 3
 
 ```{r}
-#| echo=FALSE
-#| message = FALSE
-#| warning=FALSE
+#| warning = FALSE
 
 library(readxl)
 library(psych)
@@ -39,14 +40,12 @@ data_suits <- read_xlsx('data_suits.xlsx') %>%
 t(describe(data_suits$viewers_millions))
 ```
 
-
+<br>
 
 ## Ad. 4
 
 ```{r}
-#| echo=FALSE
-#| message = FALSE
-#| warning=FALSE
+#| warning = FALSE
 
 library(ggplot2)
 data_suits %>%
@@ -60,15 +59,11 @@ data_suits %>%
   ggtitle('Viewership over time (millions) by episode number')
 ```
 
-
+<br>
 
 ## Ad. 5
 
 ```{r}
-#| echo=FALSE
-#| message = FALSE
-#| warning=FALSE
-
 data_suits$viewers_delta <- c(0, diff(data_suits$viewers_millions))
 
 data_suits[-1,] %>%
@@ -78,14 +73,11 @@ data_suits[-1,] %>%
 ```
 
 
+<br>
 
 ## Ad. 6
 
 ```{r}
-#| echo=FALSE
-#| message = FALSE
-#| warning=FALSE
-
 delta_s1_s9 <- abs(data_suits$viewers_millions[125] - data_suits$viewers_millions[1])
 delta_s3_s5 <- abs(data_suits$viewers_millions[61] - data_suits$viewers_millions[29])
 ```
@@ -101,3 +93,13 @@ Added parameters:
 * hide source code
 * hide messages
 * hide warnings
+
+
+
+## Ad. 7.1
+
+Changed the strategy:
+
+* instead of echo=false I did a folding of code - u can see the code if u want
+* put the hide warnings as they are irritating in all relevant places
+* added blank lines between sections
