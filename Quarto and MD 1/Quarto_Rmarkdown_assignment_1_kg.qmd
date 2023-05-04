@@ -84,7 +84,7 @@ delta_s3_s5 <- abs(data_suits$viewers_millions[61] - data_suits$viewers_millions
 
 The viewership decreased by `r delta_s3_s5` millions between seasons 3 and 9, which seems not that dramatic - yet when we look at the difference between seasons 1 and 9 - it is huge - `r delta_s1_s9`. In general, As the seasons go on, we can observe a negative trend (as presented in plot Ad. 4)
 
-
+<br>
 
 ## Ad. 7
 
@@ -94,7 +94,7 @@ Added parameters:
 * hide messages
 * hide warnings
 
-
+<br>
 
 ## Ad. 7.1
 
@@ -103,3 +103,9 @@ Changed the strategy:
 * instead of echo=false I did a folding of code - u can see the code if u want
 * put the hide warnings as they are irritating in all relevant places
 * added blank lines between sections
+
+<br>
+
+## Ad. 8
+
+Render done!
