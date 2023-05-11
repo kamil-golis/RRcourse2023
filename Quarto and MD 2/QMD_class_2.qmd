@@ -102,7 +102,7 @@ If that's not clear, ChatGPT makes it clearer:
 
 ### The syntax
 
-YAML requires indentation for options and suboptions (accordingly with the hierarchy). Examples from leaset complex to most complex:
+YAML requires indentation for options and suboptions (accordingly with the hierarchy). Examples:
 
 `---`
 <pre class="code-block">
@@ -112,6 +112,7 @@ format: html
 `---`
 
 Now with html-specific options:
+
 `---`
 <pre class="code-block">
 title: "My document"
@@ -136,6 +137,7 @@ or include an image for a background:
 Change the date format and make it dynamic:
 
 `date: today`
+
 `date-format: short`
 
 ### Setting default chunk options
@@ -145,11 +147,13 @@ Within the `execute` key you can set default options for code blocks. They can b
 Example:
 
 `---`
+<pre class="code-block">
 execute:
   echo: fenced
   warning: false
   cache: true 
   freeze: true
+</pre>
 `---`
 
 `freeze` specifies a more general approach for caching when rendering a bunch of files or a whole project. `true` to not recompute generated computational output during a whole project render. `false` to always recompute (default). `auto` to recompute when a source file changed.
@@ -380,7 +384,7 @@ For example:
 <pre class="code-block">
 format: 
   html: default
-  ipynb: default
+  docx: default
 </pre>
 `---`
 
@@ -418,7 +422,7 @@ It's helpful when:
 
 We have several options here:
 
-`_quarto.yml` file keeps information at a project level
+`_quarto.yml` file keeps information at a project level ([see here](https://quarto.org/docs/projects/quarto-projects.html#project-metadata))
 
 `dir/_metadata.yml` file keeps information at a directory level (e.g. within a project)
 
@@ -467,10 +471,8 @@ Get your TV show description file from the previous week. Modify it using what w
 
 2) Add some features for the .html output, e.g.: add a table of contents and change the theme.
 
-3) Put the YAML options in a separate file.
+3) Include tabs.
 
-4) Include tabs.
-
-5) Browse through the documentation and pick additional configuration options on your own.
+4) Browse through the documentation and pick additional configuration options on your own.
 
 Note: if you didn't finish the assignment last week, you can work with the Assignment.Rmd file. You'll have to convert it to .qmd first though (use what we've learned today for that!)

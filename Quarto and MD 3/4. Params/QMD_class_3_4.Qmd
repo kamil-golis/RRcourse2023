@@ -103,12 +103,14 @@ Or, via terminal:
 You might want to generate different report versions. To avoid overwriting your own work (each document rendered with the same name):
 
 <pre class="code-block">
+reg <- "Asia"
+y <- 2017
 quarto_render("QMD_class_3_4.qmd", execute_params = list(
-  year = 2017,
-  region = "Asia",
+  year = y,
+  region = reg,
   printcode = FALSE,
   data = "file.csv"
-), output_file = paste0(“Report-“, params$region, “-“, params$year, “.html”)))
+), output_file = paste0(“Report-“, reg, “-“, y, “.html”)))
 </pre>
 
 

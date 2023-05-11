@@ -173,13 +173,14 @@ format: html
 <h2 class="anchored" data-anchor-id="basics">Basics</h2>
 <section id="the-syntax" class="level3">
 <h3 class="anchored" data-anchor-id="the-syntax">The syntax</h3>
-<p>YAML requires indentation for options and suboptions (accordingly with the hierarchy). Examples from leaset complex to most complex:</p>
+<p>YAML requires indentation for options and suboptions (accordingly with the hierarchy). Examples:</p>
 <code>---</code>
 <pre class="code-block">title: "My document"
 format: html
 </pre>
 <p><code>---</code></p>
-Now with html-specific options: <code>---</code>
+<p>Now with html-specific options:</p>
+<code>---</code>
 <pre class="code-block">title: "My document"
 format: 
   html:
@@ -197,13 +198,21 @@ number-sections: true
 <section id="dates" class="level3">
 <h3 class="anchored" data-anchor-id="dates">Dates</h3>
 <p>Change the date format and make it dynamic:</p>
-<p><code>date: today</code> <code>date-format: short</code></p>
+<p><code>date: today</code></p>
+<p><code>date-format: short</code></p>
 </section>
 <section id="setting-default-chunk-options" class="level3">
 <h3 class="anchored" data-anchor-id="setting-default-chunk-options">Setting default chunk options</h3>
 <p>Within the <code>execute</code> key you can set default options for code blocks. They can be overridden within the specific code chunks.</p>
 <p>Example:</p>
-<p><code>---</code> execute: echo: fenced warning: false cache: true freeze: true <code>---</code></p>
+<code>---</code>
+<pre class="code-block">execute:
+  echo: fenced
+  warning: false
+  cache: true 
+  freeze: true
+</pre>
+<p><code>---</code></p>
 <p><code>freeze</code> specifies a more general approach for caching when rendering a bunch of files or a whole project. <code>true</code> to not recompute generated computational output during a whole project render. <code>false</code> to always recompute (default). <code>auto</code> to recompute when a source file changed.</p>
 </section>
 <section id="switching-formats" class="level3">
@@ -391,7 +400,7 @@ Some more text
 <code>---</code>
 <pre class="code-block">format: 
   html: default
-  ipynb: default
+  docx: default
 </pre>
 <p><code>---</code></p>
 <p>Or if the file extensions overlap:</p>
@@ -421,7 +430,7 @@ Some more text
 <li>we work with a team and want everyone to use the same settings.</li>
 </ul>
 <p>We have several options here:</p>
-<p><code>_quarto.yml</code> file keeps information at a project level</p>
+<p><code>_quarto.yml</code> file keeps information at a project level (<a href="https://quarto.org/docs/projects/quarto-projects.html#project-metadata">see here</a>)</p>
 <p><code>dir/_metadata.yml</code> file keeps information at a directory level (e.g.&nbsp;within a project)</p>
 <p><code>dir/document.qmd</code> is just what we put in the document header.</p>
 <p>Document overrides <code>_metadata.yml</code> which overrides <code>_quarto.yml</code>.</p>
@@ -454,7 +463,6 @@ Some more text
 <ol type="1">
 <li><p>Render it into at least two different formats in an automated way (e.g.&nbsp;using YAML options or a script).</p></li>
 <li><p>Add some features for the .html output, e.g.: add a table of contents and change the theme.</p></li>
-<li><p>Put the YAML options in a separate file.</p></li>
 <li><p>Include tabs.</p></li>
 <li><p>Browse through the documentation and pick additional configuration options on your own.</p></li>
 </ol>
