@@ -225,12 +225,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="generating-several-documents" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="generating-several-documents"><span class="header-section-number">1.4</span> Generating several documents</h2>
 <p>You might want to generate different report versions. To avoid overwriting your own work (each document rendered with the same name):</p>
-<pre class="code-block">quarto_render("QMD_class_3_4.qmd", execute_params = list(
-  year = 2017,
-  region = "Asia",
+<pre class="code-block">reg &lt;- "Asia"
+y &lt;- 2017
+quarto_render("QMD_class_3_4.qmd", execute_params = list(
+  year = y,
+  region = reg,
   printcode = FALSE,
   data = "file.csv"
-), output_file = paste0(“Report-“, params$region, “-“, params$year, “.html”)))
+), output_file = paste0(“Report-“, reg, “-“, y, “.html”)))
 </pre>
 </section>
 </section>
