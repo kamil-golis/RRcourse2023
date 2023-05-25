@@ -71,22 +71,18 @@ Consider the Source vs Visual mode and Rendering on Save options.
 
 # Basic formatting
 
-Some basic text formatting includes `*Italics*` or `_Italics_` (*Italics*) and `**Bold**` or `__Bold__` (**Bold**) text.
+Some basic text formatting includes `*Italics*` or `_Italics_` (*Italics*) and `**Bold**` or `__Bold__` (**Bold**) text. ***Bold***
 
-\`Space between lines to break a paragraph
+Some text
+sdajiodf
 
-Like so\`
+Some text  
+sdajiodf
 
-Space between lines to break a paragraph
+Some text
 
-Like so
+sdajiodf
 
-\`Or end a line with a double space to break
-
-without starting a new paragraph\`
-
-Or end a line with a double space to break\
-without starting a new paragraph
 
 Superscripts can be done like so: `R^2^` R^2^
 
@@ -184,18 +180,7 @@ Subscripts can be done like so: `H~2~O` H~2~O
 
 You can also just use html to write stuff within the Markdown document (when rendering into html). Here's something copied and pasted directly from YAML Wikipedia page source code:
 
-|                                                                                                                                                                                                          |
-|------------------------------------------------------------------------|
-| [![Official YAML Logo.svg](//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Official_YAML_Logo.svg/64px-Official_YAML_Logo.svg.png){alt="Official YAML Logo.svg"}](/wiki/File:Official_YAML_Logo.svg) |
-| [Filename extensions](/wiki/Filename_extension "Filename extension")                                                                                                                                     |
-| [Internet media type](/wiki/Media_type "Media type")                                                                                                                                                     |
-| Initial release                                                                                                                                                                                          |
-| [Latest release](/wiki/Software_release_life_cycle "Software release life cycle")                                                                                                                        |
-| Type of format                                                                                                                                                                                           |
-| [Open format](/wiki/Open_file_format "Open file format")?                                                                                                                                                |
-| Website                                                                                                                                                                                                  |
-
-: YAML
+<table class="infobox"><caption class="infobox-title" style="padding-bottom:0.15em;">YAML</caption><tbody><tr><td colspan="2" class="infobox-image"><a href="/wiki/File:Official_YAML_Logo.svg" class="image"><img alt="Official YAML Logo.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Official_YAML_Logo.svg/64px-Official_YAML_Logo.svg.png" decoding="async" width="64" height="59" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Official_YAML_Logo.svg/96px-Official_YAML_Logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Official_YAML_Logo.svg/128px-Official_YAML_Logo.svg.png 2x" data-file-width="512" data-file-height="471"></a></td></tr><tr><th scope="row" class="infobox-label" style="line-height:1.2em; padding-right:0.65em;"><a href="/wiki/Filename_extension" title="Filename extension">Filename extensions</a></th><td class="infobox-data" style="line-height:1.35em;"><code class="mw-highlight mw-highlight-lang-text mw-content-ltr" id="" style="" dir="ltr">.yaml</code>, <code class="mw-highlight mw-highlight-lang-text mw-content-ltr" id="" style="" dir="ltr">.yml</code></td></tr><tr><th scope="row" class="infobox-label" style="line-height:1.2em; padding-right:0.65em;"><a href="/wiki/Media_type" title="Media type">Internet media&nbsp;type</a></th><td class="infobox-data" style="line-height:1.35em;"><i>Not registered</i></td></tr><tr><th scope="row" class="infobox-label" style="line-height:1.2em; padding-right:0.65em;">Initial release</th><td class="infobox-data" style="line-height:1.35em;">11&nbsp;May 2001<span class="noprint">; 21 years ago</span><span style="display:none">&nbsp;(<span class="bday dtstart published updated">2001-05-11</span>)</span></td></tr><tr><th scope="row" class="infobox-label" style="line-height:1.2em; padding-right:0.65em;"><a href="/wiki/Software_release_life_cycle" title="Software release life cycle">Latest release</a></th><td class="infobox-data" style="line-height:1.35em;"><div style="display: inline-block; line-height: 1.2em; padding: .1em 0;">1.2 (Revision 1.2.2)<br>1&nbsp;October 2021<span class="noprint">; 18 months ago</span><span style="display:none">&nbsp;(<span class="bday dtstart published updated">2021-10-01</span>)</span> </div></td></tr><tr><th scope="row" class="infobox-label" style="line-height:1.2em; padding-right:0.65em;">Type of format</th><td class="infobox-data" style="line-height:1.35em;">Data interchange</td></tr><tr><th scope="row" class="infobox-label" style="line-height:1.2em; padding-right:0.65em;"><span class="nowrap"><a href="/wiki/Open_file_format" title="Open file format">Open format</a>?</span></th><td class="infobox-data" style="line-height:1.35em;">Yes</td></tr><tr><th scope="row" class="infobox-label" style="line-height:1.2em; padding-right:0.65em;">Website</th><td class="infobox-data" style="line-height:1.35em;"><span class="url"><a rel="nofollow" class="external text" href="https://yaml.org">yaml<wbr>.org</a></span></td></tr></tbody></table>
 
 ------------------------------------------------------------------------
 
@@ -208,6 +193,17 @@ $$\int_{-\infty}^{\infty}1/(b-a) dx$$
 # Using code chunks in Quarto
 
 The main thing, however, is the ability to integrate coding within the document:
+
+```{r}
+
+```
+
+```{python}
+
+```
+
+
+
 
 ```{r}
 cat("This is a code chunk")
@@ -349,10 +345,14 @@ By default Quarto stops after encountering an error. We can tell it to continue.
 ## Caching results that take long to compute
 
 ```{r}
+x <- 15
+```
+
+```{r}
 #| label = "slow_chunk",
 #| cache = TRUE
 Sys.sleep(10)
-a <- 4
+a <- 5 + x
 a
 ```
 
@@ -385,7 +385,7 @@ Other stuff:
 ### Hide the source code with `echo=FALSE`
 
 ```{r}
-#| echo = FALSE
+#| echo = TRUE
 
 1+1
 
