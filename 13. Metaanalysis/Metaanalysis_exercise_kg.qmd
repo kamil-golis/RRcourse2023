@@ -1,0 +1,98 @@
+---
+title: "Metaanalysis Exercise"
+author: "Kamil Golis"
+date: today
+format:  
+  html:
+    theme: lumen
+    toc: true
+    toc_float: true
+title-block-banner: true
+execute:
+  echo: fenced
+---
+
+```{r}
+#| label = "setup",
+#| include = FALSE
+library(meta)
+library(metafor)
+library(dplyr)
+library(readxl)
+#setwd("")
+```
+
+## Metaanalysis of Children's toy preferences
+
+Here I will focus on case boys playing "female toys" 
+
+---
+
+
+```{r}
+data <- read_excel("data/metaanalysis_data.xlsx")
+```
+
+Description of the data we are given:
+
+Neutral toys (1 = neutral toys included; 2 = neutral toys not included); Parent present (1 = absent; 2 = minimal interaction; 3 = moderate or full interaction); Setting = location of study (1 = home; 2 = laboratory; 3 = nursery); Country = gender inequality index, a measure of how gender egalitarian the country was at the time the study took place.
+
+Note. Quality is assessed using Newcastle–Ottawa Quality Assessment Scale criteria adapted for this study. A star indicates that the study fulfilled this criterion; an X indicates that the study did not fulfil this criterion. Case definition adequate: clear justification for the gendered nature of a toy, for example, based on research. Representativeness of cases: recruitment of consecutive participants. Selection of controls: whether boys and girls were comparable in terms of social background. Parental opinion: whether parents’ views on gender were measured. Comparability of both groups: the toys were comparable (in size, shape, etc.) and if the boys and girls were comparable in age. Ascertainment of behaviour: Play behaviour was clearly defined. Same ascertainment method for both groups: The measurement of the outcome (time spent playing with toy) was clearly defined. Nonresponse rate: whether either nonuptake or dropout rates reported.
+
+---
+
+```{r}
+load("data/madata.RData")
+Meta_Analysis_Data[1:5,]
+```
+
+Estimate the overall effect size
+
+```{r}
+m <- metagen(TE=Mean_boys_play_female,
+             seTE=SD_boys_play_female,
+             data=data,
+             studlab=paste(Study),
+             comb.fixed = TRUE,
+             comb.random = FALSE)
+m
+```
+
+
+---
+
+Let's take a look at the funnel plot
+
+```{r}
+m %>% funnel()
+```
+
+The funnel is not symmetrical - most of the publications are in the right part of the funnel. Still, the funnel encompasses 25/27 of the publications. 
+
+---
+
+Let's check if methods and quality affect the results
+```{r}
+m %>% metareg(`Case definition adequate` + `Representativeness of cases` + `Selection of controls` + `Parental opinion` + `Comparability of both groups` + `Ascertainment of behaviour` + `Same ascertainment method for both groups` + `Non‐response rate` + `NOS score`)
+
+
+m %>% metareg(`Case definition adequate` +
+                `Representativeness of cases`+
+                `Selection of controls` +
+                `Parental opinion` + 
+                `Comparability of both groups` + 
+                `Ascertainment of behaviour` +
+                `Non‐response rate`)
+```
+
+From the p-value perspective it seems that no quality/method variable is siginficant, yet we can see large coefficient values for these variables.
+
+
+---
+
+Let's check if author's gender affects the results
+```{r}
+m %>% metareg(`Female authors` + `Male authors`)
+```
+
+Again, from the p-value perspective, the authors gender does not affect the results (assuming alpha=5%). Yet, assuming alpha=10%, we can see that number of female authors of the study affect the results positively.
